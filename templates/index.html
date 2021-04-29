@@ -1,0 +1,18 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}ToDo list for the week{% endblock %}
+
+{% block styles %}
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
+{% endblock styles %}
+
+{% block body %}
+
+    {% block content %}
+        <script type= "text/javascript" src= "{{ url_for('static',filename='js/nonalpha.js') }}"></script>
+        <form method="POST" action="" >
+            <textarea id="cipher_enter" name ="ciphertext" placeholder="Enter your cipher text here"></textarea>
+            <input type="submit" id="tables" value="GET TABLES" onclick="checkValid()">
+        </form>
+    {% endblock %}
+{% endblock body %}

@@ -1,0 +1,121 @@
+
+{% extends "bootstrap/base.html" %}
+
+{% block title %}ToDo list for the week{% endblock %}
+
+{% block styles %}
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
+{% endblock styles %}
+
+{% block body %}
+
+    {% block content %}
+        <script type= "text/javascript" src= "{{ url_for('static',filename='js/probbutton.js') }}"></script>
+
+        <div class="baur_table_div" id="top_div">
+            {% if ciphertext %}
+            <table class="baur_table" id="top_table">
+                {%for i in range(ciphertext|length)%}
+                    <th>{{ ciphertext[i] }}</th>
+                {% endfor %}
+
+                {%for i in range(topAndBottom[0]|length)%}
+                    <tr>
+                        {% for j in range(ciphertext|length)%}
+                            {% if topAndBottom[0][i][j] != " " %}
+                                <td><button class="prob_button" id="{{0,i,j}}" onclick="clicked(this.id)">{{ topAndBottom[0][i][j] }}</button></td>
+                            {% endif %}
+
+                            {% if topAndBottom[0][i][j] == " " %}
+                                <td> </td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+
+            </table>
+            {% endif %}
+        </div>
+
+        <div class="baur_table_div" id="bottom_div">
+            {% if ciphertext %}
+            <table class="baur_table" id="bottom_table">
+                {%for i in range(ciphertext|length)%}
+                    <th>{{ ciphertext[i] }}</th>
+                {% endfor %}
+
+                {%for i in range(topAndBottom[1]|length)%}
+                    <tr>
+                        {% for j in range(ciphertext|length)%}
+                            {% if topAndBottom[1][i][j] != " " %}
+                                <td><button class="prob_button" id="{{1,i,j}}" onclick="clicked(this.id)">{{ topAndBottom[1][i][j] }}</button></td>
+                            {% endif %}
+
+                            {% if topAndBottom[1][i][j] == " " %}
+                                <td> </td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+
+            </table>
+            {% endif %}
+        </div>
+
+        <div class="text_show_div" id="text_show_div">
+            <h3>the first message is:</h3>
+            <input type="text" id="top_text" class="text_show"  readonly maxlength="{{ messageLen }}">
+            <h3>the second message is:</h3>
+            <input type="text" id="bottom_text" class="text_show" readonly maxlength="{{ messageLen }}">
+
+            <input type="text" id="top_holder" class="inv" value="{{ message }}" readonly>
+            <input type="text" id="bottom_holder" class="inv" value="{{ message }}" readonly>
+
+        </div>
+
+         <form method="POST" action="">
+            <div class="solver" id="plain_text">
+                {% if plaintext %}
+                    <textarea class="solver_text" id="solver_plain" name="plaintext">{{plaintext}}</textarea>
+                {% else %}
+                    <textarea class="solver_text" id="solver_plain" name="plaintext" placeholder="Enter your full plaintext here"></textarea>
+                {% endif %}
+            </div>
+             <div class="solver" id="cipher_text">
+<!--                <textarea class="solver_text" id="solver_cipher" readonly>-->
+<!--                    -->
+<!--                </textarea>-->
+                 <table id="word_table">
+                     {% for word in words %}
+                     <tr>
+                         <td>{{word}}</td>
+                     </tr>
+                     {% endfor %}
+                 </table>
+
+            </div>
+             <div class="inv_solver" id="inv_text">
+                <textarea class="inv_text" name="ciphertext" style="visibility: hidden" readonly>{{ciphertext}}</textarea>
+
+            </div>
+             <input type="submit" id="decipher" value="dechipher" ciphertext={{ciphertext}}>
+
+
+        </form>
+
+<!--        <div class="solver" id="plain_text">-->
+<!--            <textarea class="solver_text" id="solver_plain" name="plaintext" placeholder="Enter your full plaintext here"></textarea>-->
+
+<!--        </div>-->
+<!--        <div class="solver" id="cipher_text">-->
+<!--            <textarea class="solver_text" id="solver_cipher" readonly></textarea>-->
+
+<!--        </div>-->
+
+
+
+        <div class="solver" id="deciphered_text">
+            <textarea class="solver_text" id="deciphered_plain" readonly></textarea>
+        </div>
+    {% endblock %}
+{% endblock body %}

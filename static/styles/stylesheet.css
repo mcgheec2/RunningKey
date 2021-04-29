@@ -1,0 +1,178 @@
+body{
+    text-align: center;
+}
+
+#cipher_enter{
+    width: 100%;
+  height: 300px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  text-transform: uppercase;
+  background-color: #f8f8f8;
+  resize: none;
+    outline: none;
+    font-size: 20px;
+    font-family: "Courier New";
+}
+
+#tables{
+    margin-top: 25px;
+    display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #666666;
+  border: none;
+  border-radius: 15px;
+
+}
+
+#tables:hover{
+  background-color: #454545;
+}
+
+.baur_table_div{
+   width: 100%;
+  height: 200px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  background-color: #f8f8f8;
+  resize: none;
+    outline: none;
+    font-size: 20px;
+    font-family: "Courier New";
+  margin-bottom: 25px;
+}
+
+.baur_table{
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: auto;
+  overflow-y: scroll;
+  white-space: nowrap;
+  height: 175px;
+  font-family: "Courier New";
+}
+
+.prob_button{
+  font-family: "Courier New";
+  background-color: initial;
+  border-radius: 3px;
+}
+
+.prob_button:hover{
+  background-color: #EAEAEA;
+}
+
+.clicked_button{
+  font-family: "Courier New";
+  background-color: #373737;
+  color: white;
+  border-radius: 3px;
+}
+
+.clicked_button:hover{
+  background-color: black;
+}
+
+#text_show_div{
+  display: inline-block;
+  text-align: center;
+  font-family: "Courier New";
+  width: 100%;
+}
+
+.text_show{
+   width: 100%;
+  height: 20px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  background-color: #f8f8f8;
+  resize: none;
+    outline: none;
+    font-size: 10px;
+    font-family: "Courier New";
+  margin-bottom: 20px;
+  font-size: large;
+  text-transform: uppercase;
+  white-space: pre;
+}
+
+.inv{
+  visibility: hidden;
+}
+
+.solver{
+  width: 100%;
+  height: 200px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  background-color: #f8f8f8;
+  resize: none;
+    outline: none;
+    font-size: 20px;
+    font-family: "Courier New";
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.solver_text{
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: auto;
+  overflow-y: scroll;
+  white-space: nowrap;
+  height: 175px;
+  font-family: "Courier New";
+  border: none;
+  background-color: #f8f8f8;
+  font-size: large;
+}
+
+#deciphered_text{
+  visibility: hidden;
+}
+
+#decipher{
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #666666;
+  border: none;
+  border-radius: 15px;
+}
+
+#decipher:hover{
+  background-color: #454545;
+}
+
+.inv_solver{
+  visibility: hidden;
+  height: 1px;
+}
+
+#word_table{
+  overflow: auto;
+  height: 170px;
+  display: inline-block;
+  width: 100%;
+}
